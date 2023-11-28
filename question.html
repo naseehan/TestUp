@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        /* background-color: #000; */
+        background: #1f1f47;
+        padding: 1rem;
+      }
+
+
+      /* blob start */
+      .blob {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: linear-gradient(
+          180deg,
+          rgba(47, 184, 255, 0.42) 31.77%,
+          #5c9df1 100%
+        );
+        mix-blend-mode: color-dodge;
+        -webkit-animation: move 25s infinite alternate;
+        animation: move 25s infinite alternate;
+        transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+      }
+
+      .blob:hover {
+        width: 520px;
+        height: 520px;
+        -webkit-filter: blur(30px);
+        filter: blur(30px);
+        box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.6),
+          inset 100px 100px 0 0px #fa709a, inset 200px 200px 0 0px #784ba8,
+          inset 300px 300px 0 0px #2b86c5;
+      }
+
+      @-webkit-keyframes move {
+        from {
+          transform: translate(-100px, -50px) rotate(-90deg);
+          border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+        }
+
+        to {
+          transform: translate(500px, 100px) rotate(-10deg);
+          border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+        }
+      }
+
+      @keyframes move {
+        from {
+          transform: translate(-100px, -50px) rotate(-90deg);
+          border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+        }
+
+        to {
+          transform: translate(500px, 100px) rotate(-10deg);
+          border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+        }
+      }
+
+      /* blob end */
+      p {
+        font-size: 19px;
+        font-weight: bold;
+      }
+      p,
+      label {
+        color: #fff;
+      }
+
+      h1 {
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+      }
+      .container {
+        max-width: 600px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 50px;
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .form-group {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      .form-check label {
+        font-size: 16px;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+      @media (max-width: 767px) {
+      .blob {
+        display: none;
+      }
+    }
+    </style>
+    <title>Responsive Quiz Form</title>
+  </head>
+  <body>
+    <div class="blob"></div>
+    <h1>Quiz form</h1>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="question">Question:</label>
+          <p id="question">1) What is the purpose of the HTML footer tag?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question1_option1"
+            value="question1_option1"
+          />
+          <label class="form-check-label" for="question1_option1"
+            >Defines a section that contains navigational links</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question1_option2"
+            value="question1_option2"
+          />
+          <label class="form-check-label" for="question1_option2"
+            >Specifies a header for a document or section</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question1_option3"
+            value="question1_option3"
+          />
+          <label class="form-check-label" for="question1_option3">
+            Defines a footer for a document or section</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question1_option4"
+            value="question1_option4"
+          />
+          <label class="form-check-label" for="question1_option4"
+            >Represents a highlighted text in the document</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">2) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question2_option1"
+            value="question2_option1"
+          />
+          <label class="form-check-label" for="question2_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question2_option2"
+            value="question2_option2"
+          />
+          <label class="form-check-label" for="question2_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question2_option3"
+            value="question2_option3"
+          />
+          <label class="form-check-label" for="question2_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question2_option4"
+            value="question2_option4"
+          />
+          <label class="form-check-label" for="question2_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">3) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question3_option1"
+            value="question3_option1"
+          />
+          <label class="form-check-label" for="question3_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question3_option2"
+            value="question3_option2"
+          />
+          <label class="form-check-label" for="question3_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question3_option3"
+            value="question3_option3"
+          />
+          <label class="form-check-label" for="question3_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question3_option4"
+            value="question3_option4"
+          />
+          <label class="form-check-label" for="question3_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">4) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question4_option1"
+            value="question4_option1"
+          />
+          <label class="form-check-label" for="question4_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question4_option2"
+            value="question4_option2"
+          />
+          <label class="form-check-label" for="question4_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question4_option3"
+            value="question4_option3"
+          />
+          <label class="form-check-label" for="question4_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question4_option4"
+            value="question4_option4"
+          />
+          <label class="form-check-label" for="question4_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">5) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question5_option1"
+            value="question5_option1"
+          />
+          <label class="form-check-label" for="question5_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question5_option2"
+            value="question5_option2"
+          />
+          <label class="form-check-label" for="question5_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question5_option3"
+            value="question5_option3"
+          />
+          <label class="form-check-label" for="question5_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question5_option4"
+            value="question5_option4"
+          />
+          <label class="form-check-label" for="question5_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">6) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question6_option1"
+            value="question6_option1"
+          />
+          <label class="form-check-label" for="question6_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question6_option2"
+            value="question6_option2"
+          />
+          <label class="form-check-label" for="question6_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question6_option3"
+            value="question6_option3"
+          />
+          <label class="form-check-label" for="question6_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question6_option4"
+            value="uestion6_option4"
+          />
+          <label class="form-check-label" for="question6_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">7) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question7_option1"
+            value="question7_option1"
+          />
+          <label class="form-check-label" for="question7_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question7_option2"
+            value="question7_option2"
+          />
+          <label class="form-check-label" for="question7_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question7_option3"
+            value="question7_option3"
+          />
+          <label class="form-check-label" for="question7_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question7_option4"
+            value="question7_option4"
+          />
+          <label class="form-check-label" for="question7_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">8) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question8_option1"
+            value="question8_option1"
+          />
+          <label class="form-check-label" for="question8_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question8_option2"
+            value="question8_option2"
+          />
+          <label class="form-check-label" for="question8_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question8_option3"
+            value="question8_option3"
+          />
+          <label class="form-check-label" for="question8_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question8_option4"
+            value="question8_option4"
+          />
+          <label class="form-check-label" for="question8_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">9) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question9_option1"
+            value="question9_option1"
+          />
+          <label class="form-check-label" for="question9_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question9_option2"
+            value="question9_option2"
+          />
+          <label class="form-check-label" for="question9_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question9_option3"
+            value="question9_option3"
+          />
+          <label class="form-check-label" for="question9_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question9_option4"
+            value="question9_option4"
+          />
+          <label class="form-check-label" for="question9_option4"
+            >Option 4</label
+          >
+        </div>
+
+        <div class="form-group">
+          <p id="question">10) What is the capital of France?</p>
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question10_option1"
+            value="question10_option1"
+          />
+          <label class="form-check-label" for="question10_option1"
+            >Option 1</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question10_option2"
+            value="question10_option2"
+          />
+          <label class="form-check-label" for="question10_option2"
+            >Option 2</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question10_option3"
+            value="question10_option3"
+          />
+          <label class="form-check-label" for="question10_option3"
+            >Option 3</label
+          >
+        </div>
+
+        <div class="form-check">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="answer"
+            id="question10_option4"
+            value="question10_option4"
+          />
+          <label class="form-check-label" for="question10_option4"
+            >Option 4</label
+          >
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary mt-3"
+          onsubmit="handleSubmit()"
+        >
+          Submit
+        </button>
+        
+      </form>
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
