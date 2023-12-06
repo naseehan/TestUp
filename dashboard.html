@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz App Dashboard</title>
     <link
       rel="stylesheet"
@@ -58,8 +59,23 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
 
-      ul {
+      ul { 
         padding-left: 20px;
+      }
+      @media only screen and (max-width: 400px) {
+        /* table {
+          height: 20rem;
+          text-align: center;
+          font-size: 21px;
+        }
+        th,td {
+          vertical-align: middle !important;
+        } */
+        .container {
+          margin: 20px 10px;
+          padding: 0;
+          width: 22rem;
+        }
       }
     </style>
   </head>

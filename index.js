@@ -1,5 +1,5 @@
-function react() {
-    let topic = "react"
-    localStorage.setItem('topic', topic);
-}
+// function react() {
+//     let topic = "react"
+//     localStorage.setItem('topic', topic);
+// }
 
