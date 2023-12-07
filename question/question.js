@@ -13,7 +13,7 @@ const htmlQuestions = [
       "Represents a highlighted text in the document",
       "Some other option",
     ],
-    answer: 2,
+    answer: 1,
   },
   {
     q: "2) What does CSS stand for?",
@@ -68,7 +68,7 @@ const htmlQuestions = [
   {
     q: "9) What is the default display property in CSS?",
     options: ["block", "inline", "flex", "grid"],
-    answer: 1,
+    answer: 0,
   },
   {
     q: "10) What does API stand for?",
@@ -117,8 +117,8 @@ function handleSubmit(event) {
     for (let i = 1; i <= 10; i++) {
         const selectedOption = document.querySelector(`input[name="answer${i}"]:checked`);
         if (selectedOption) {
-            // const answerIndex = selectedOption.value.slice(-1);
-            const answerIndex = selectedOption.value-1;
+            const answerIndex = selectedOption.value.slice(-1);
+            // const answerIndex = selectedOption.value;
             userAnswers.push(parseInt(answerIndex));
         } else {
             // If any question is not answered, you can handle it here (skip or show a message)
@@ -128,12 +128,13 @@ console.log(userAnswers);
     // Compare user answers with the correct answers and calculate the score
     let score = 0;
     for (let i = 0; i < userAnswers.length; i++) {
-        if (userAnswers[i] === htmlQuestions[i].answer) {
+        if (userAnswers[i] === htmlQuestions[i].answer+1) {
             score++;
         }
+       
     }
     localStorage.setItem('score', score);
 
     // Redirect to the result page with the score
-    window.location.replace("result.html");
+    window.location.replace("../result/result.html");
 }
